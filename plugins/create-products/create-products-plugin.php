@@ -7,4 +7,4 @@ Author: Raja Khan
 */
 
 // Include necessary files
-require_once plugin_dir_path( __FILE__ ) . 'includes/create-product-form-handler.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/create-products-form-handler.php';
