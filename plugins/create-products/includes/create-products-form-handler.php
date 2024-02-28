@@ -1,7 +1,6 @@
 <?php
-// form-handler.php
- 
-require_once 'utils.php';
+// create-products-form-handler.php
+
  
 // Function to display the contact form
 function create_products_plugin_display_form() {
