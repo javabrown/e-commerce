@@ -1,0 +1,30 @@
+RewriteEngine On
+
+# Define the base URL for the WordPress installation
+RewriteBase /projects/active_site/wpx/
+
+# Redirect requests to the WordPress folder
+RewriteCond %{REQUEST_URI} !^/projects/active_site/wpx/
+RewriteRule ^(.*)$ /projects/active_site/wpx/$1 [L]
+
+# Redirect requests to the root URL to index.php
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^(.*)$ /projects/active_site/wpx/index.php [L]
+
+# Redirect requests for index.html to index.php
+RewriteCond %{REQUEST_URI} ^/index\.html$
+RewriteRule ^(.*)$ /projects/active_site/wpx/index.php [L]
+
+
+#PRODUCTS_API:
+# Handle requests for PHP files outside the WordPress directory
+RewriteCond %{REQUEST_URI} ^/projects/api/
+RewriteRule ^(.*)$ /projects/api/$1 [L]
+
+# Exclude requests for existing files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^index\.php$ - [L]
+
+# WordPress default rewrite rules
+RewriteRule . /projects/active_site/wpx/index.php [L]
