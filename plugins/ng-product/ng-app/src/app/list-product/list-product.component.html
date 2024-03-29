@@ -1,0 +1,11 @@
+<h2>List of Products</h2>
+<ul class="product-list">
+  <li *ngFor="let product of products" class="product-item">
+    <h3 class="product-name">{{ product.name }}</h3>
+    <p class="product-description">{{ product.description }}</p>
+    <p class="product-detail">Price: {{ product.price }}</p>
+    <p class="product-detail">Category: {{ product.category }}</p>
+    <p class="product-detail">Stock Quantity: {{ product.stock_quantity }}</p>
+    <!-- Add more fields as needed -->
+  </li>
+</ul>
